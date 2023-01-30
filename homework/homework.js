@@ -114,5 +114,44 @@ WHERE
 ORDER BY 	
 	actor_id DESC 
 
+
+/* -----------------------------------------------------------------------------------
+INVENT 5 exercises on this db, they’ll be asked to your colleagues at the debrief 🙂
+----------------------------------------------------------------------------------- */
+
+// 13. Find all movies whose titles have maximum 13 characters, start with "C", and only
+// display the title and description columns
+SELECT 
+	title, description
+FROM 
+	film
+WHERE 
+	title ILIKE 'C____________' 
+
+
+// 13. Find all movies whose titles finish in "W" or their descriptions start with "a" and display
+//     them by id in a descending order, but only the title and description columns
+SELECT 
+	title, description
+FROM 
+	film
+WHERE 
+	title ILIKE '%w' OR description ILIKE 'boat%'
+ORDER BY 	
+	film_id DESC
+
+
+// 14. Display the title and description of all movies that are over 2 hours long and include "India" 
+//     in their description
+
+SELECT 
+	title, description
+FROM 
+	film
+WHERE 
+	description ILIKE '%India%' AND length > 120
+ORDER BY 	
+film_id 
     
-// INVENT 5 exercises on this db, they’ll be asked to your colleagues at the debrief 🙂
+
+// 15. 
