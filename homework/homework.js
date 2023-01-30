@@ -165,4 +165,16 @@ WHERE
 ORDER BY 	
     film_id DESC
 
-// 16. Only show the 5 movies that are on the 3rd page of the previously displayed list
+// 16. Only show the 5 movies that are on the 3rd page of the movie list that has been updated in the last 10 days
+// of May 2013; display them in a descending order by film id
+SELECT 
+	*
+FROM 
+	film
+WHERE 
+	last_update BETWEEN '2013-05-15' AND '2013-05-30'
+ORDER BY 	
+	film_id DESC
+LIMIT 5
+OFFSET 15
+
