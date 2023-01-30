@@ -156,6 +156,7 @@ film_id
 
 // 15. Display in a descending manner, by film id, all movies whose titles are no more than 15 characters long, 
 // start with "D", end with "E", and have been updated in the first 30 days of May, 2013
+// exact match:
 SELECT 
     *
 FROM 
@@ -164,6 +165,17 @@ WHERE
     title ILIKE 'd_____________e' AND last_update BETWEEN '2013-05-01' AND '2013-05-30'
 ORDER BY 	
     film_id DESC
+
+// less than 16 characters
+SELECT 
+    *
+FROM 
+    film
+WHERE 
+    title ILIKE 'd%e' AND LENGTH(title) < 16 AND last_update BETWEEN '2013-05-01' AND '2013-05-30'
+ORDER BY 	
+    film_id DESC
+
 
 // 16. Only show the 5 movies that are on the 3rd page of the movie list that has been updated in the last 10 days
 // of May 2013; display them in a descending order by film id
